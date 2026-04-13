@@ -1,4 +1,4 @@
-/spawnmonster batong 1 '{
+/spawnmonster punchy 1 '{
   "aggressive": true,
   "damageTeamType": "enemy",
   "scripts": [
@@ -6,6 +6,76 @@
   ],
   "behaviorUpdateDelta": 1,
   "initialScriptDelta": 1,
+  "statusSettings": {
+    "statusProperties": {
+      "targetMaterialKind": "organic"
+    },
+    "appliesEnvironmentStatusEffects": false,
+    "appliesWeatherStatusEffects": true,
+    "minimumLiquidStatusEffectPercentage": 0.1,
+    "primaryScriptSources": [
+      "/stats/monster_primary.lua"
+    ],
+    "primaryScriptDelta": 5,
+    "stats": {
+      "knockbackStunTime": {
+        "baseValue": 0.5
+      },
+      "knockbackThreshold": {
+        "baseValue": 9
+      },
+      "maxHealth": {
+        "baseValue": 50
+      },
+      "protection": {
+        "baseValue": 0.0
+      },
+      "healthRegen": {
+        "baseValue": 0.0
+      },
+      "powerMultiplier": {
+        "baseValue": 1.0
+      },
+      "physicalResistance": {
+        "baseValue": 0.0
+      },
+      "fireResistance": {
+        "baseValue": 0.0
+      },
+      "fireStatusImmunity": {
+        "baseValue": 0.0
+      },
+      "iceResistance": {
+        "baseValue": 0.0
+      },
+      "iceStatusImmunity": {
+        "baseValue": 0.0
+      },
+      "electricResistance": {
+        "baseValue": 0.0
+      },
+      "electricStatusImmunity": {
+        "baseValue": 0.0
+      },
+      "poisonResistance": {
+        "baseValue": 0.0
+      },
+      "poisonStatusImmunity": {
+        "baseValue": 0.0
+      }
+    },
+    "resources": {
+      "stunned": {
+        "deltaValue": -1.0,
+        "initialValue": 0.0
+      },
+      "health": {
+        "maxStat": "maxHealth",
+        "deltaStat": "healthRegen",
+        "defaultPercentage": 500
+      }
+    }
+  },
   "animationCustom": {
     "animatedParts": {
       "stateTypes": {
@@ -149,7 +219,24 @@
     }
   },
   "movementSettings": {
-    "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+    "collisionPoly": [
+      [
+        1.5,
+        1.5
+      ],
+      [
+        1.5,
+        -1.5
+      ],
+      [
+        -1.5,
+        -1.5
+      ],
+      [
+        -1.5,
+        1.5
+      ]
+    ],
     "mass": 1.0,
     "walkSpeed": 30,
     "runSpeed": 30,
@@ -198,7 +285,7 @@
         0,
         -2
       ],
-      "monsterType": "batong",
+      "monsterType": "punchy",
       "monsterPara": {
         "aggressive": false,
         "damageTeamType": "enemy",
@@ -207,8 +294,95 @@
         ],
         "behaviorUpdateDelta": 1,
         "initialScriptDelta": 1,
+        "statusSettings": {
+          "statusProperties": {
+            "targetMaterialKind": "organic"
+          },
+          "appliesEnvironmentStatusEffects": false,
+          "appliesWeatherStatusEffects": true,
+          "minimumLiquidStatusEffectPercentage": 0.1,
+          "primaryScriptSources": [
+            "/stats/monster_primary.lua"
+          ],
+          "primaryScriptDelta": 5,
+          "stats": {
+            "knockbackStunTime": {
+              "baseValue": 0.5
+            },
+            "knockbackThreshold": {
+              "baseValue": 9
+            },
+            "maxHealth": {
+              "baseValue": 50
+            },
+            "protection": {
+              "baseValue": 0.0
+            },
+            "healthRegen": {
+              "baseValue": 0.0
+            },
+            "powerMultiplier": {
+              "baseValue": 1.0
+            },
+            "physicalResistance": {
+              "baseValue": 0.0
+            },
+            "fireResistance": {
+              "baseValue": 0.0
+            },
+            "fireStatusImmunity": {
+              "baseValue": 0.0
+            },
+            "iceResistance": {
+              "baseValue": 0.0
+            },
+            "iceStatusImmunity": {
+              "baseValue": 0.0
+            },
+            "electricResistance": {
+              "baseValue": 0.0
+            },
+            "electricStatusImmunity": {
+              "baseValue": 0.0
+            },
+            "poisonResistance": {
+              "baseValue": 0.0
+            },
+            "poisonStatusImmunity": {
+              "baseValue": 0.0
+            }
+          },
+          "resources": {
+            "stunned": {
+              "deltaValue": -1.0,
+              "initialValue": 0.0
+            },
+            "health": {
+              "maxStat": "maxHealth",
+              "deltaStat": "healthRegen",
+              "defaultPercentage": 500
+            }
+          }
+        },
         "movementSettings": {
-          "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+          "collisionPoly": [
+            [
+              1.5,
+              1.5
+            ],
+            [
+              1.5,
+              -1.5
+            ],
+            [
+              -1.5,
+              -1.5
+            ],
+            [
+              -1.5,
+              1.5
+            ]
+          ],
           "mass": 1.0,
           "walkSpeed": 4,
           "runSpeed": 12,
@@ -361,7 +535,6 @@
         },
         "behavior": {
           "name": "monster",
-          "description": "chain batong inline v10 global movement tracker for head wander",
           "scripts": [
             "/scripts/behavior.lua",
             "/scripts/behavior/bdata.lua",
@@ -399,7 +572,7 @@
               0,
               -2
             ],
-            "monsterType": "batong",
+            "monsterType": "punchy",
             "monsterPara": {
               "aggressive": false,
               "damageTeamType": "enemy",
@@ -408,8 +581,95 @@
               ],
               "behaviorUpdateDelta": 1,
               "initialScriptDelta": 1,
+              "statusSettings": {
+                "statusProperties": {
+                  "targetMaterialKind": "organic"
+                },
+                "appliesEnvironmentStatusEffects": false,
+                "appliesWeatherStatusEffects": true,
+                "minimumLiquidStatusEffectPercentage": 0.1,
+                "primaryScriptSources": [
+                  "/stats/monster_primary.lua"
+                ],
+                "primaryScriptDelta": 5,
+                "stats": {
+                  "knockbackStunTime": {
+                    "baseValue": 0.5
+                  },
+                  "knockbackThreshold": {
+                    "baseValue": 9
+                  },
+                  "maxHealth": {
+                    "baseValue": 50
+                  },
+                  "protection": {
+                    "baseValue": 0.0
+                  },
+                  "healthRegen": {
+                    "baseValue": 0.0
+                  },
+                  "powerMultiplier": {
+                    "baseValue": 1.0
+                  },
+                  "physicalResistance": {
+                    "baseValue": 0.0
+                  },
+                  "fireResistance": {
+                    "baseValue": 0.0
+                  },
+                  "fireStatusImmunity": {
+                    "baseValue": 0.0
+                  },
+                  "iceResistance": {
+                    "baseValue": 0.0
+                  },
+                  "iceStatusImmunity": {
+                    "baseValue": 0.0
+                  },
+                  "electricResistance": {
+                    "baseValue": 0.0
+                  },
+                  "electricStatusImmunity": {
+                    "baseValue": 0.0
+                  },
+                  "poisonResistance": {
+                    "baseValue": 0.0
+                  },
+                  "poisonStatusImmunity": {
+                    "baseValue": 0.0
+                  }
+                },
+                "resources": {
+                  "stunned": {
+                    "deltaValue": -1.0,
+                    "initialValue": 0.0
+                  },
+                  "health": {
+                    "maxStat": "maxHealth",
+                    "deltaStat": "healthRegen",
+                    "defaultPercentage": 500
+                  }
+                }
+              },
               "movementSettings": {
-                "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                "collisionPoly": [
+                  [
+                    1.5,
+                    1.5
+                  ],
+                  [
+                    1.5,
+                    -1.5
+                  ],
+                  [
+                    -1.5,
+                    -1.5
+                  ],
+                  [
+                    -1.5,
+                    1.5
+                  ]
+                ],
                 "mass": 1.0,
                 "walkSpeed": 4,
                 "runSpeed": 12,
@@ -562,7 +822,7 @@
               },
               "behavior": {
                 "name": "monster",
-                "description": "chain batong inline v10 global movement tracker for head wander",
+                "description": "chain punchy inline v10 global movement tracker for head wander",
                 "scripts": [
                   "/scripts/behavior.lua",
                   "/scripts/behavior/bdata.lua",
@@ -600,7 +860,7 @@
                     0,
                     -2
                   ],
-                  "monsterType": "batong",
+                  "monsterType": "punchy",
                   "monsterPara": {
                     "aggressive": false,
                     "damageTeamType": "enemy",
@@ -609,8 +869,95 @@
                     ],
                     "behaviorUpdateDelta": 1,
                     "initialScriptDelta": 1,
+                    "statusSettings": {
+                      "statusProperties": {
+                        "targetMaterialKind": "organic"
+                      },
+                      "appliesEnvironmentStatusEffects": false,
+                      "appliesWeatherStatusEffects": true,
+                      "minimumLiquidStatusEffectPercentage": 0.1,
+                      "primaryScriptSources": [
+                        "/stats/monster_primary.lua"
+                      ],
+                      "primaryScriptDelta": 5,
+                      "stats": {
+                        "knockbackStunTime": {
+                          "baseValue": 0.5
+                        },
+                        "knockbackThreshold": {
+                          "baseValue": 9
+                        },
+                        "maxHealth": {
+                          "baseValue": 50
+                        },
+                        "protection": {
+                          "baseValue": 0.0
+                        },
+                        "healthRegen": {
+                          "baseValue": 0.0
+                        },
+                        "powerMultiplier": {
+                          "baseValue": 1.0
+                        },
+                        "physicalResistance": {
+                          "baseValue": 0.0
+                        },
+                        "fireResistance": {
+                          "baseValue": 0.0
+                        },
+                        "fireStatusImmunity": {
+                          "baseValue": 0.0
+                        },
+                        "iceResistance": {
+                          "baseValue": 0.0
+                        },
+                        "iceStatusImmunity": {
+                          "baseValue": 0.0
+                        },
+                        "electricResistance": {
+                          "baseValue": 0.0
+                        },
+                        "electricStatusImmunity": {
+                          "baseValue": 0.0
+                        },
+                        "poisonResistance": {
+                          "baseValue": 0.0
+                        },
+                        "poisonStatusImmunity": {
+                          "baseValue": 0.0
+                        }
+                      },
+                      "resources": {
+                        "stunned": {
+                          "deltaValue": -1.0,
+                          "initialValue": 0.0
+                        },
+                        "health": {
+                          "maxStat": "maxHealth",
+                          "deltaStat": "healthRegen",
+                          "defaultPercentage": 500
+                        }
+                      }
+                    },
                     "movementSettings": {
-                      "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                      "collisionPoly": [
+                        [
+                          1.5,
+                          1.5
+                        ],
+                        [
+                          1.5,
+                          -1.5
+                        ],
+                        [
+                          -1.5,
+                          -1.5
+                        ],
+                        [
+                          -1.5,
+                          1.5
+                        ]
+                      ],
                       "mass": 1.0,
                       "walkSpeed": 4,
                       "runSpeed": 12,
@@ -763,7 +1110,7 @@
                     },
                     "behavior": {
                       "name": "monster",
-                      "description": "chain batong inline v10 global movement tracker for head wander",
+                      "description": "chain punchy inline v10 global movement tracker for head wander",
                       "scripts": [
                         "/scripts/behavior.lua",
                         "/scripts/behavior/bdata.lua",
@@ -801,7 +1148,7 @@
                           0,
                           -2
                         ],
-                        "monsterType": "batong",
+                        "monsterType": "punchy",
                         "monsterPara": {
                           "aggressive": false,
                           "damageTeamType": "enemy",
@@ -810,8 +1157,95 @@
                           ],
                           "behaviorUpdateDelta": 1,
                           "initialScriptDelta": 1,
+                          "statusSettings": {
+                            "statusProperties": {
+                              "targetMaterialKind": "organic"
+                            },
+                            "appliesEnvironmentStatusEffects": false,
+                            "appliesWeatherStatusEffects": true,
+                            "minimumLiquidStatusEffectPercentage": 0.1,
+                            "primaryScriptSources": [
+                              "/stats/monster_primary.lua"
+                            ],
+                            "primaryScriptDelta": 5,
+                            "stats": {
+                              "knockbackStunTime": {
+                                "baseValue": 0.5
+                              },
+                              "knockbackThreshold": {
+                                "baseValue": 9
+                              },
+                              "maxHealth": {
+                                "baseValue": 50
+                              },
+                              "protection": {
+                                "baseValue": 0.0
+                              },
+                              "healthRegen": {
+                                "baseValue": 0.0
+                              },
+                              "powerMultiplier": {
+                                "baseValue": 1.0
+                              },
+                              "physicalResistance": {
+                                "baseValue": 0.0
+                              },
+                              "fireResistance": {
+                                "baseValue": 0.0
+                              },
+                              "fireStatusImmunity": {
+                                "baseValue": 0.0
+                              },
+                              "iceResistance": {
+                                "baseValue": 0.0
+                              },
+                              "iceStatusImmunity": {
+                                "baseValue": 0.0
+                              },
+                              "electricResistance": {
+                                "baseValue": 0.0
+                              },
+                              "electricStatusImmunity": {
+                                "baseValue": 0.0
+                              },
+                              "poisonResistance": {
+                                "baseValue": 0.0
+                              },
+                              "poisonStatusImmunity": {
+                                "baseValue": 0.0
+                              }
+                            },
+                            "resources": {
+                              "stunned": {
+                                "deltaValue": -1.0,
+                                "initialValue": 0.0
+                              },
+                              "health": {
+                                "maxStat": "maxHealth",
+                                "deltaStat": "healthRegen",
+                                "defaultPercentage": 500
+                              }
+                            }
+                          },
                           "movementSettings": {
-                            "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                            "collisionPoly": [
+                              [
+                                1.5,
+                                1.5
+                              ],
+                              [
+                                1.5,
+                                -1.5
+                              ],
+                              [
+                                -1.5,
+                                -1.5
+                              ],
+                              [
+                                -1.5,
+                                1.5
+                              ]
+                            ],
                             "mass": 1.0,
                             "walkSpeed": 4,
                             "runSpeed": 12,
@@ -964,7 +1398,7 @@
                           },
                           "behavior": {
                             "name": "monster",
-                            "description": "chain batong inline v10 global movement tracker for head wander",
+                            "description": "chain punchy inline v10 global movement tracker for head wander",
                             "scripts": [
                               "/scripts/behavior.lua",
                               "/scripts/behavior/bdata.lua",
@@ -1002,7 +1436,7 @@
                                 0,
                                 -2
                               ],
-                              "monsterType": "batong",
+                              "monsterType": "punchy",
                               "monsterPara": {
                                 "aggressive": false,
                                 "damageTeamType": "enemy",
@@ -1011,8 +1445,95 @@
                                 ],
                                 "behaviorUpdateDelta": 1,
                                 "initialScriptDelta": 1,
+                                "statusSettings": {
+                                  "statusProperties": {
+                                    "targetMaterialKind": "organic"
+                                  },
+                                  "appliesEnvironmentStatusEffects": false,
+                                  "appliesWeatherStatusEffects": true,
+                                  "minimumLiquidStatusEffectPercentage": 0.1,
+                                  "primaryScriptSources": [
+                                    "/stats/monster_primary.lua"
+                                  ],
+                                  "primaryScriptDelta": 5,
+                                  "stats": {
+                                    "knockbackStunTime": {
+                                      "baseValue": 0.5
+                                    },
+                                    "knockbackThreshold": {
+                                      "baseValue": 9
+                                    },
+                                    "maxHealth": {
+                                      "baseValue": 50
+                                    },
+                                    "protection": {
+                                      "baseValue": 0.0
+                                    },
+                                    "healthRegen": {
+                                      "baseValue": 0.0
+                                    },
+                                    "powerMultiplier": {
+                                      "baseValue": 1.0
+                                    },
+                                    "physicalResistance": {
+                                      "baseValue": 0.0
+                                    },
+                                    "fireResistance": {
+                                      "baseValue": 0.0
+                                    },
+                                    "fireStatusImmunity": {
+                                      "baseValue": 0.0
+                                    },
+                                    "iceResistance": {
+                                      "baseValue": 0.0
+                                    },
+                                    "iceStatusImmunity": {
+                                      "baseValue": 0.0
+                                    },
+                                    "electricResistance": {
+                                      "baseValue": 0.0
+                                    },
+                                    "electricStatusImmunity": {
+                                      "baseValue": 0.0
+                                    },
+                                    "poisonResistance": {
+                                      "baseValue": 0.0
+                                    },
+                                    "poisonStatusImmunity": {
+                                      "baseValue": 0.0
+                                    }
+                                  },
+                                  "resources": {
+                                    "stunned": {
+                                      "deltaValue": -1.0,
+                                      "initialValue": 0.0
+                                    },
+                                    "health": {
+                                      "maxStat": "maxHealth",
+                                      "deltaStat": "healthRegen",
+                                      "defaultPercentage": 500
+                                    }
+                                  }
+                                },
                                 "movementSettings": {
-                                  "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                  "collisionPoly": [
+                                    [
+                                      1.5,
+                                      1.5
+                                    ],
+                                    [
+                                      1.5,
+                                      -1.5
+                                    ],
+                                    [
+                                      -1.5,
+                                      -1.5
+                                    ],
+                                    [
+                                      -1.5,
+                                      1.5
+                                    ]
+                                  ],
                                   "mass": 1.0,
                                   "walkSpeed": 4,
                                   "runSpeed": 12,
@@ -1165,7 +1686,7 @@
                                 },
                                 "behavior": {
                                   "name": "monster",
-                                  "description": "chain batong inline v10 global movement tracker for head wander",
+                                  "description": "chain punchy inline v10 global movement tracker for head wander",
                                   "scripts": [
                                     "/scripts/behavior.lua",
                                     "/scripts/behavior/bdata.lua",
@@ -1203,7 +1724,7 @@
                                       0,
                                       -2
                                     ],
-                                    "monsterType": "batong",
+                                    "monsterType": "punchy",
                                     "monsterPara": {
                                       "aggressive": false,
                                       "damageTeamType": "enemy",
@@ -1212,8 +1733,95 @@
                                       ],
                                       "behaviorUpdateDelta": 1,
                                       "initialScriptDelta": 1,
+                                      "statusSettings": {
+                                        "statusProperties": {
+                                          "targetMaterialKind": "organic"
+                                        },
+                                        "appliesEnvironmentStatusEffects": false,
+                                        "appliesWeatherStatusEffects": true,
+                                        "minimumLiquidStatusEffectPercentage": 0.1,
+                                        "primaryScriptSources": [
+                                          "/stats/monster_primary.lua"
+                                        ],
+                                        "primaryScriptDelta": 5,
+                                        "stats": {
+                                          "knockbackStunTime": {
+                                            "baseValue": 0.5
+                                          },
+                                          "knockbackThreshold": {
+                                            "baseValue": 9
+                                          },
+                                          "maxHealth": {
+                                            "baseValue": 50
+                                          },
+                                          "protection": {
+                                            "baseValue": 0.0
+                                          },
+                                          "healthRegen": {
+                                            "baseValue": 0.0
+                                          },
+                                          "powerMultiplier": {
+                                            "baseValue": 1.0
+                                          },
+                                          "physicalResistance": {
+                                            "baseValue": 0.0
+                                          },
+                                          "fireResistance": {
+                                            "baseValue": 0.0
+                                          },
+                                          "fireStatusImmunity": {
+                                            "baseValue": 0.0
+                                          },
+                                          "iceResistance": {
+                                            "baseValue": 0.0
+                                          },
+                                          "iceStatusImmunity": {
+                                            "baseValue": 0.0
+                                          },
+                                          "electricResistance": {
+                                            "baseValue": 0.0
+                                          },
+                                          "electricStatusImmunity": {
+                                            "baseValue": 0.0
+                                          },
+                                          "poisonResistance": {
+                                            "baseValue": 0.0
+                                          },
+                                          "poisonStatusImmunity": {
+                                            "baseValue": 0.0
+                                          }
+                                        },
+                                        "resources": {
+                                          "stunned": {
+                                            "deltaValue": -1.0,
+                                            "initialValue": 0.0
+                                          },
+                                          "health": {
+                                            "maxStat": "maxHealth",
+                                            "deltaStat": "healthRegen",
+                                            "defaultPercentage": 500
+                                          }
+                                        }
+                                      },
                                       "movementSettings": {
-                                        "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                        "collisionPoly": [
+                                          [
+                                            1.5,
+                                            1.5
+                                          ],
+                                          [
+                                            1.5,
+                                            -1.5
+                                          ],
+                                          [
+                                            -1.5,
+                                            -1.5
+                                          ],
+                                          [
+                                            -1.5,
+                                            1.5
+                                          ]
+                                        ],
                                         "mass": 1.0,
                                         "walkSpeed": 4,
                                         "runSpeed": 12,
@@ -1366,7 +1974,7 @@
                                       },
                                       "behavior": {
                                         "name": "monster",
-                                        "description": "chain batong inline v10 global movement tracker for head wander",
+                                        "description": "chain punchy inline v10 global movement tracker for head wander",
                                         "scripts": [
                                           "/scripts/behavior.lua",
                                           "/scripts/behavior/bdata.lua",
@@ -1404,7 +2012,7 @@
                                             0,
                                             -2
                                           ],
-                                          "monsterType": "batong",
+                                          "monsterType": "punchy",
                                           "monsterPara": {
                                             "aggressive": false,
                                             "damageTeamType": "enemy",
@@ -1413,8 +2021,95 @@
                                             ],
                                             "behaviorUpdateDelta": 1,
                                             "initialScriptDelta": 1,
+                                            "statusSettings": {
+                                              "statusProperties": {
+                                                "targetMaterialKind": "organic"
+                                              },
+                                              "appliesEnvironmentStatusEffects": false,
+                                              "appliesWeatherStatusEffects": true,
+                                              "minimumLiquidStatusEffectPercentage": 0.1,
+                                              "primaryScriptSources": [
+                                                "/stats/monster_primary.lua"
+                                              ],
+                                              "primaryScriptDelta": 5,
+                                              "stats": {
+                                                "knockbackStunTime": {
+                                                  "baseValue": 0.5
+                                                },
+                                                "knockbackThreshold": {
+                                                  "baseValue": 9
+                                                },
+                                                "maxHealth": {
+                                                  "baseValue": 50
+                                                },
+                                                "protection": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "healthRegen": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "powerMultiplier": {
+                                                  "baseValue": 1.0
+                                                },
+                                                "physicalResistance": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "fireResistance": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "fireStatusImmunity": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "iceResistance": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "iceStatusImmunity": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "electricResistance": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "electricStatusImmunity": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "poisonResistance": {
+                                                  "baseValue": 0.0
+                                                },
+                                                "poisonStatusImmunity": {
+                                                  "baseValue": 0.0
+                                                }
+                                              },
+                                              "resources": {
+                                                "stunned": {
+                                                  "deltaValue": -1.0,
+                                                  "initialValue": 0.0
+                                                },
+                                                "health": {
+                                                  "maxStat": "maxHealth",
+                                                  "deltaStat": "healthRegen",
+                                                  "defaultPercentage": 500
+                                                }
+                                              }
+                                            },
                                             "movementSettings": {
-                                              "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                              "collisionPoly": [
+                                                [
+                                                  1.5,
+                                                  1.5
+                                                ],
+                                                [
+                                                  1.5,
+                                                  -1.5
+                                                ],
+                                                [
+                                                  -1.5,
+                                                  -1.5
+                                                ],
+                                                [
+                                                  -1.5,
+                                                  1.5
+                                                ]
+                                              ],
                                               "mass": 1.0,
                                               "walkSpeed": 4,
                                               "runSpeed": 12,
@@ -1567,7 +2262,7 @@
                                             },
                                             "behavior": {
                                               "name": "monster",
-                                              "description": "chain batong inline v10 global movement tracker for head wander",
+                                              "description": "chain punchy inline v10 global movement tracker for head wander",
                                               "scripts": [
                                                 "/scripts/behavior.lua",
                                                 "/scripts/behavior/bdata.lua",
@@ -1605,7 +2300,7 @@
                                                   0,
                                                   -2
                                                 ],
-                                                "monsterType": "batong",
+                                                "monsterType": "punchy",
                                                 "monsterPara": {
                                                   "aggressive": false,
                                                   "damageTeamType": "enemy",
@@ -1614,8 +2309,95 @@
                                                   ],
                                                   "behaviorUpdateDelta": 1,
                                                   "initialScriptDelta": 1,
+                                                  "statusSettings": {
+                                                    "statusProperties": {
+                                                      "targetMaterialKind": "organic"
+                                                    },
+                                                    "appliesEnvironmentStatusEffects": false,
+                                                    "appliesWeatherStatusEffects": true,
+                                                    "minimumLiquidStatusEffectPercentage": 0.1,
+                                                    "primaryScriptSources": [
+                                                      "/stats/monster_primary.lua"
+                                                    ],
+                                                    "primaryScriptDelta": 5,
+                                                    "stats": {
+                                                      "knockbackStunTime": {
+                                                        "baseValue": 0.5
+                                                      },
+                                                      "knockbackThreshold": {
+                                                        "baseValue": 9
+                                                      },
+                                                      "maxHealth": {
+                                                        "baseValue": 50
+                                                      },
+                                                      "protection": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "healthRegen": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "powerMultiplier": {
+                                                        "baseValue": 1.0
+                                                      },
+                                                      "physicalResistance": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "fireResistance": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "fireStatusImmunity": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "iceResistance": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "iceStatusImmunity": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "electricResistance": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "electricStatusImmunity": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "poisonResistance": {
+                                                        "baseValue": 0.0
+                                                      },
+                                                      "poisonStatusImmunity": {
+                                                        "baseValue": 0.0
+                                                      }
+                                                    },
+                                                    "resources": {
+                                                      "stunned": {
+                                                        "deltaValue": -1.0,
+                                                        "initialValue": 0.0
+                                                      },
+                                                      "health": {
+                                                        "maxStat": "maxHealth",
+                                                        "deltaStat": "healthRegen",
+                                                        "defaultPercentage": 500
+                                                      }
+                                                    }
+                                                  },
                                                   "movementSettings": {
-                                                    "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                                    "collisionPoly": [
+                                                      [
+                                                        1.5,
+                                                        1.5
+                                                      ],
+                                                      [
+                                                        1.5,
+                                                        -1.5
+                                                      ],
+                                                      [
+                                                        -1.5,
+                                                        -1.5
+                                                      ],
+                                                      [
+                                                        -1.5,
+                                                        1.5
+                                                      ]
+                                                    ],
                                                     "mass": 1.0,
                                                     "walkSpeed": 4,
                                                     "runSpeed": 12,
@@ -1768,7 +2550,7 @@
                                                   },
                                                   "behavior": {
                                                     "name": "monster",
-                                                    "description": "chain batong inline v10 global movement tracker for head wander",
+                                                    "description": "chain punchy inline v10 global movement tracker for head wander",
                                                     "scripts": [
                                                       "/scripts/behavior.lua",
                                                       "/scripts/behavior/bdata.lua",
@@ -1806,7 +2588,7 @@
                                                         0,
                                                         -2
                                                       ],
-                                                      "monsterType": "batong",
+                                                      "monsterType": "punchy",
                                                       "monsterPara": {
                                                         "aggressive": false,
                                                         "damageTeamType": "enemy",
@@ -1815,8 +2597,95 @@
                                                         ],
                                                         "behaviorUpdateDelta": 1,
                                                         "initialScriptDelta": 1,
+                                                        "statusSettings": {
+                                                          "statusProperties": {
+                                                            "targetMaterialKind": "organic"
+                                                          },
+                                                          "appliesEnvironmentStatusEffects": false,
+                                                          "appliesWeatherStatusEffects": true,
+                                                          "minimumLiquidStatusEffectPercentage": 0.1,
+                                                          "primaryScriptSources": [
+                                                            "/stats/monster_primary.lua"
+                                                          ],
+                                                          "primaryScriptDelta": 5,
+                                                          "stats": {
+                                                            "knockbackStunTime": {
+                                                              "baseValue": 0.5
+                                                            },
+                                                            "knockbackThreshold": {
+                                                              "baseValue": 9
+                                                            },
+                                                            "maxHealth": {
+                                                              "baseValue": 50
+                                                            },
+                                                            "protection": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "healthRegen": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "powerMultiplier": {
+                                                              "baseValue": 1.0
+                                                            },
+                                                            "physicalResistance": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "fireResistance": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "fireStatusImmunity": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "iceResistance": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "iceStatusImmunity": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "electricResistance": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "electricStatusImmunity": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "poisonResistance": {
+                                                              "baseValue": 0.0
+                                                            },
+                                                            "poisonStatusImmunity": {
+                                                              "baseValue": 0.0
+                                                            }
+                                                          },
+                                                          "resources": {
+                                                            "stunned": {
+                                                              "deltaValue": -1.0,
+                                                              "initialValue": 0.0
+                                                            },
+                                                            "health": {
+                                                              "maxStat": "maxHealth",
+                                                              "deltaStat": "healthRegen",
+                                                              "defaultPercentage": 500
+                                                            }
+                                                          }
+                                                        },
                                                         "movementSettings": {
-                                                          "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                                          "collisionPoly": [
+                                                            [
+                                                              1.5,
+                                                              1.5
+                                                            ],
+                                                            [
+                                                              1.5,
+                                                              -1.5
+                                                            ],
+                                                            [
+                                                              -1.5,
+                                                              -1.5
+                                                            ],
+                                                            [
+                                                              -1.5,
+                                                              1.5
+                                                            ]
+                                                          ],
                                                           "mass": 1.0,
                                                           "walkSpeed": 4,
                                                           "runSpeed": 12,
@@ -1969,7 +2838,7 @@
                                                         },
                                                         "behavior": {
                                                           "name": "monster",
-                                                          "description": "chain batong inline v10 global movement tracker for head wander",
+                                                          "description": "chain punchy inline v10 global movement tracker for head wander",
                                                           "scripts": [
                                                             "/scripts/behavior.lua",
                                                             "/scripts/behavior/bdata.lua",
@@ -2007,7 +2876,7 @@
                                                               0,
                                                               -2
                                                             ],
-                                                            "monsterType": "batong",
+                                                            "monsterType": "punchy",
                                                             "monsterPara": {
                                                               "aggressive": false,
                                                               "damageTeamType": "enemy",
@@ -2016,8 +2885,95 @@
                                                               ],
                                                               "behaviorUpdateDelta": 1,
                                                               "initialScriptDelta": 1,
+                                                              "statusSettings": {
+                                                                "statusProperties": {
+                                                                  "targetMaterialKind": "organic"
+                                                                },
+                                                                "appliesEnvironmentStatusEffects": false,
+                                                                "appliesWeatherStatusEffects": true,
+                                                                "minimumLiquidStatusEffectPercentage": 0.1,
+                                                                "primaryScriptSources": [
+                                                                  "/stats/monster_primary.lua"
+                                                                ],
+                                                                "primaryScriptDelta": 5,
+                                                                "stats": {
+                                                                  "knockbackStunTime": {
+                                                                    "baseValue": 0.5
+                                                                  },
+                                                                  "knockbackThreshold": {
+                                                                    "baseValue": 9
+                                                                  },
+                                                                  "maxHealth": {
+                                                                    "baseValue": 50
+                                                                  },
+                                                                  "protection": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "healthRegen": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "powerMultiplier": {
+                                                                    "baseValue": 1.0
+                                                                  },
+                                                                  "physicalResistance": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "fireResistance": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "fireStatusImmunity": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "iceResistance": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "iceStatusImmunity": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "electricResistance": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "electricStatusImmunity": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "poisonResistance": {
+                                                                    "baseValue": 0.0
+                                                                  },
+                                                                  "poisonStatusImmunity": {
+                                                                    "baseValue": 0.0
+                                                                  }
+                                                                },
+                                                                "resources": {
+                                                                  "stunned": {
+                                                                    "deltaValue": -1.0,
+                                                                    "initialValue": 0.0
+                                                                  },
+                                                                  "health": {
+                                                                    "maxStat": "maxHealth",
+                                                                    "deltaStat": "healthRegen",
+                                                                    "defaultPercentage": 500
+                                                                  }
+                                                                }
+                                                              },
                                                               "movementSettings": {
-                                                                "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                                                "collisionPoly": [
+                                                                  [
+                                                                    1.5,
+                                                                    1.5
+                                                                  ],
+                                                                  [
+                                                                    1.5,
+                                                                    -1.5
+                                                                  ],
+                                                                  [
+                                                                    -1.5,
+                                                                    -1.5
+                                                                  ],
+                                                                  [
+                                                                    -1.5,
+                                                                    1.5
+                                                                  ]
+                                                                ],
                                                                 "mass": 1.0,
                                                                 "walkSpeed": 4,
                                                                 "runSpeed": 12,
@@ -2170,7 +3126,7 @@
                                                               },
                                                               "behavior": {
                                                                 "name": "monster",
-                                                                "description": "chain batong inline v10 global movement tracker for head wander",
+                                                                "description": "chain punchy inline v10 global movement tracker for head wander",
                                                                 "scripts": [
                                                                   "/scripts/behavior.lua",
                                                                   "/scripts/behavior/bdata.lua",
@@ -2208,7 +3164,7 @@
                                                                     0,
                                                                     -2
                                                                   ],
-                                                                  "monsterType": "batong",
+                                                                  "monsterType": "punchy",
                                                                   "monsterPara": {
                                                                     "aggressive": false,
                                                                     "damageTeamType": "enemy",
@@ -2217,8 +3173,95 @@
                                                                     ],
                                                                     "behaviorUpdateDelta": 1,
                                                                     "initialScriptDelta": 1,
+                                                                    "statusSettings": {
+                                                                      "statusProperties": {
+                                                                        "targetMaterialKind": "organic"
+                                                                      },
+                                                                      "appliesEnvironmentStatusEffects": false,
+                                                                      "appliesWeatherStatusEffects": true,
+                                                                      "minimumLiquidStatusEffectPercentage": 0.1,
+                                                                      "primaryScriptSources": [
+                                                                        "/stats/monster_primary.lua"
+                                                                      ],
+                                                                      "primaryScriptDelta": 5,
+                                                                      "stats": {
+                                                                        "knockbackStunTime": {
+                                                                          "baseValue": 0.5
+                                                                        },
+                                                                        "knockbackThreshold": {
+                                                                          "baseValue": 9
+                                                                        },
+                                                                        "maxHealth": {
+                                                                          "baseValue": 50
+                                                                        },
+                                                                        "protection": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "healthRegen": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "powerMultiplier": {
+                                                                          "baseValue": 1.0
+                                                                        },
+                                                                        "physicalResistance": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "fireResistance": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "fireStatusImmunity": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "iceResistance": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "iceStatusImmunity": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "electricResistance": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "electricStatusImmunity": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "poisonResistance": {
+                                                                          "baseValue": 0.0
+                                                                        },
+                                                                        "poisonStatusImmunity": {
+                                                                          "baseValue": 0.0
+                                                                        }
+                                                                      },
+                                                                      "resources": {
+                                                                        "stunned": {
+                                                                          "deltaValue": -1.0,
+                                                                          "initialValue": 0.0
+                                                                        },
+                                                                        "health": {
+                                                                          "maxStat": "maxHealth",
+                                                                          "deltaStat": "healthRegen",
+                                                                          "defaultPercentage": 500
+                                                                        }
+                                                                      }
+                                                                    },
                                                                     "movementSettings": {
-                                                                      "collisionPoly": [[1.5,1.5],[1.5,-1.5],[-1.5,-1.5],[-1.5,1.5]],
+                                                                      "collisionPoly": [
+                                                                        [
+                                                                          1.5,
+                                                                          1.5
+                                                                        ],
+                                                                        [
+                                                                          1.5,
+                                                                          -1.5
+                                                                        ],
+                                                                        [
+                                                                          -1.5,
+                                                                          -1.5
+                                                                        ],
+                                                                        [
+                                                                          -1.5,
+                                                                          1.5
+                                                                        ]
+                                                                      ],
                                                                       "mass": 1.0,
                                                                       "walkSpeed": 4,
                                                                       "runSpeed": 12,
@@ -2371,7 +3414,7 @@
                                                                     },
                                                                     "behavior": {
                                                                       "name": "monster",
-                                                                      "description": "chain batong inline v10 global movement tracker for head wander",
+                                                                      "description": "chain punchy inline v10 global movement tracker for head wander",
                                                                       "scripts": [
                                                                         "/scripts/behavior.lua",
                                                                         "/scripts/behavior/bdata.lua",
@@ -2409,7 +3452,7 @@
                                                                           0,
                                                                           -2
                                                                         ],
-                                                                        "monsterType": "batong",
+                                                                        "monsterType": "punchy",
                                                                         "monsterPara": {},
                                                                         "spawnTeam": "enemy",
                                                                         "periodicActions": [],
@@ -2522,20 +3565,38 @@
                                                                                             }
                                                                                           },
                                                                                           "child": {
-                                                                                            "title": "sendCombatTargetNotification",
-                                                                                            "type": "action",
-                                                                                            "name": "sendNotification",
-                                                                                            "parameters": {
-                                                                                              "entity": {
-                                                                                                "key": "eachItem"
+                                                                                            "title": "sendCombatTargetNotificationGuarded",
+                                                                                            "type": "composite",
+                                                                                            "name": "sequence",
+                                                                                            "parameters": {},
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "title": "companionExists",
+                                                                                                "type": "action",
+                                                                                                "name": "entityExists",
+                                                                                                "parameters": {
+                                                                                                  "entity": {
+                                                                                                    "key": "eachItem"
+                                                                                                  }
+                                                                                                }
                                                                                               },
-                                                                                              "target": {
-                                                                                                "key": "combatTarget"
-                                                                                              },
-                                                                                              "type": {
-                                                                                                "value": "setCombatTarget"
+                                                                                              {
+                                                                                                "title": "sendCombatTargetNotification",
+                                                                                                "type": "action",
+                                                                                                "name": "sendNotification",
+                                                                                                "parameters": {
+                                                                                                  "entity": {
+                                                                                                    "key": "eachItem"
+                                                                                                  },
+                                                                                                  "target": {
+                                                                                                    "key": "combatTarget"
+                                                                                                  },
+                                                                                                  "type": {
+                                                                                                    "value": "setCombatTarget"
+                                                                                                  }
+                                                                                                }
                                                                                               }
-                                                                                            }
+                                                                                            ]
                                                                                           }
                                                                                         }
                                                                                       ]
@@ -4453,7 +5514,7 @@
                                                                         0,
                                                                         -2
                                                                       ],
-                                                                      "monsterType": "batong",
+                                                                      "monsterType": "punchy",
                                                                       "spawnTeam": "enemy",
                                                                       "monsterPara": {},
                                                                       "foundTargetActions": [],
@@ -4523,7 +5584,7 @@
                                                                       ],
                                                                       "embedFireParticleBurst": ""
                                                                     },
-                                                                    "monsterType": "batong"
+                                                                    "monsterType": "punchy"
                                                                   },
                                                                   "spawnTeam": "enemy",
                                                                   "periodicActions": [],
@@ -4636,20 +5697,38 @@
                                                                                       }
                                                                                     },
                                                                                     "child": {
-                                                                                      "title": "sendCombatTargetNotification",
-                                                                                      "type": "action",
-                                                                                      "name": "sendNotification",
-                                                                                      "parameters": {
-                                                                                        "entity": {
-                                                                                          "key": "eachItem"
+                                                                                      "title": "sendCombatTargetNotificationGuarded",
+                                                                                      "type": "composite",
+                                                                                      "name": "sequence",
+                                                                                      "parameters": {},
+                                                                                      "children": [
+                                                                                        {
+                                                                                          "title": "companionExists",
+                                                                                          "type": "action",
+                                                                                          "name": "entityExists",
+                                                                                          "parameters": {
+                                                                                            "entity": {
+                                                                                              "key": "eachItem"
+                                                                                            }
+                                                                                          }
                                                                                         },
-                                                                                        "target": {
-                                                                                          "key": "combatTarget"
-                                                                                        },
-                                                                                        "type": {
-                                                                                          "value": "setCombatTarget"
+                                                                                        {
+                                                                                          "title": "sendCombatTargetNotification",
+                                                                                          "type": "action",
+                                                                                          "name": "sendNotification",
+                                                                                          "parameters": {
+                                                                                            "entity": {
+                                                                                              "key": "eachItem"
+                                                                                            },
+                                                                                            "target": {
+                                                                                              "key": "combatTarget"
+                                                                                            },
+                                                                                            "type": {
+                                                                                              "value": "setCombatTarget"
+                                                                                            }
+                                                                                          }
                                                                                         }
-                                                                                      }
+                                                                                      ]
                                                                                     }
                                                                                   }
                                                                                 ]
@@ -6567,7 +7646,7 @@
                                                                   0,
                                                                   -2
                                                                 ],
-                                                                "monsterType": "batong",
+                                                                "monsterType": "punchy",
                                                                 "spawnTeam": "enemy",
                                                                 "monsterPara": {},
                                                                 "foundTargetActions": [],
@@ -6637,7 +7716,7 @@
                                                                 ],
                                                                 "embedFireParticleBurst": ""
                                                               },
-                                                              "monsterType": "batong"
+                                                              "monsterType": "punchy"
                                                             },
                                                             "spawnTeam": "enemy",
                                                             "periodicActions": [],
@@ -6750,20 +7829,38 @@
                                                                                 }
                                                                               },
                                                                               "child": {
-                                                                                "title": "sendCombatTargetNotification",
-                                                                                "type": "action",
-                                                                                "name": "sendNotification",
-                                                                                "parameters": {
-                                                                                  "entity": {
-                                                                                    "key": "eachItem"
+                                                                                "title": "sendCombatTargetNotificationGuarded",
+                                                                                "type": "composite",
+                                                                                "name": "sequence",
+                                                                                "parameters": {},
+                                                                                "children": [
+                                                                                  {
+                                                                                    "title": "companionExists",
+                                                                                    "type": "action",
+                                                                                    "name": "entityExists",
+                                                                                    "parameters": {
+                                                                                      "entity": {
+                                                                                        "key": "eachItem"
+                                                                                      }
+                                                                                    }
                                                                                   },
-                                                                                  "target": {
-                                                                                    "key": "combatTarget"
-                                                                                  },
-                                                                                  "type": {
-                                                                                    "value": "setCombatTarget"
+                                                                                  {
+                                                                                    "title": "sendCombatTargetNotification",
+                                                                                    "type": "action",
+                                                                                    "name": "sendNotification",
+                                                                                    "parameters": {
+                                                                                      "entity": {
+                                                                                        "key": "eachItem"
+                                                                                      },
+                                                                                      "target": {
+                                                                                        "key": "combatTarget"
+                                                                                      },
+                                                                                      "type": {
+                                                                                        "value": "setCombatTarget"
+                                                                                      }
+                                                                                    }
                                                                                   }
-                                                                                }
+                                                                                ]
                                                                               }
                                                                             }
                                                                           ]
@@ -8681,7 +9778,7 @@
                                                             0,
                                                             -2
                                                           ],
-                                                          "monsterType": "batong",
+                                                          "monsterType": "punchy",
                                                           "spawnTeam": "enemy",
                                                           "monsterPara": {},
                                                           "foundTargetActions": [],
@@ -8751,7 +9848,7 @@
                                                           ],
                                                           "embedFireParticleBurst": ""
                                                         },
-                                                        "monsterType": "batong"
+                                                        "monsterType": "punchy"
                                                       },
                                                       "spawnTeam": "enemy",
                                                       "periodicActions": [],
@@ -8864,20 +9961,38 @@
                                                                           }
                                                                         },
                                                                         "child": {
-                                                                          "title": "sendCombatTargetNotification",
-                                                                          "type": "action",
-                                                                          "name": "sendNotification",
-                                                                          "parameters": {
-                                                                            "entity": {
-                                                                              "key": "eachItem"
+                                                                          "title": "sendCombatTargetNotificationGuarded",
+                                                                          "type": "composite",
+                                                                          "name": "sequence",
+                                                                          "parameters": {},
+                                                                          "children": [
+                                                                            {
+                                                                              "title": "companionExists",
+                                                                              "type": "action",
+                                                                              "name": "entityExists",
+                                                                              "parameters": {
+                                                                                "entity": {
+                                                                                  "key": "eachItem"
+                                                                                }
+                                                                              }
                                                                             },
-                                                                            "target": {
-                                                                              "key": "combatTarget"
-                                                                            },
-                                                                            "type": {
-                                                                              "value": "setCombatTarget"
+                                                                            {
+                                                                              "title": "sendCombatTargetNotification",
+                                                                              "type": "action",
+                                                                              "name": "sendNotification",
+                                                                              "parameters": {
+                                                                                "entity": {
+                                                                                  "key": "eachItem"
+                                                                                },
+                                                                                "target": {
+                                                                                  "key": "combatTarget"
+                                                                                },
+                                                                                "type": {
+                                                                                  "value": "setCombatTarget"
+                                                                                }
+                                                                              }
                                                                             }
-                                                                          }
+                                                                          ]
                                                                         }
                                                                       }
                                                                     ]
@@ -10795,7 +11910,7 @@
                                                       0,
                                                       -2
                                                     ],
-                                                    "monsterType": "batong",
+                                                    "monsterType": "punchy",
                                                     "spawnTeam": "enemy",
                                                     "monsterPara": {},
                                                     "foundTargetActions": [],
@@ -10865,7 +11980,7 @@
                                                     ],
                                                     "embedFireParticleBurst": ""
                                                   },
-                                                  "monsterType": "batong"
+                                                  "monsterType": "punchy"
                                                 },
                                                 "spawnTeam": "enemy",
                                                 "periodicActions": [],
@@ -10978,20 +12093,38 @@
                                                                     }
                                                                   },
                                                                   "child": {
-                                                                    "title": "sendCombatTargetNotification",
-                                                                    "type": "action",
-                                                                    "name": "sendNotification",
-                                                                    "parameters": {
-                                                                      "entity": {
-                                                                        "key": "eachItem"
+                                                                    "title": "sendCombatTargetNotificationGuarded",
+                                                                    "type": "composite",
+                                                                    "name": "sequence",
+                                                                    "parameters": {},
+                                                                    "children": [
+                                                                      {
+                                                                        "title": "companionExists",
+                                                                        "type": "action",
+                                                                        "name": "entityExists",
+                                                                        "parameters": {
+                                                                          "entity": {
+                                                                            "key": "eachItem"
+                                                                          }
+                                                                        }
                                                                       },
-                                                                      "target": {
-                                                                        "key": "combatTarget"
-                                                                      },
-                                                                      "type": {
-                                                                        "value": "setCombatTarget"
+                                                                      {
+                                                                        "title": "sendCombatTargetNotification",
+                                                                        "type": "action",
+                                                                        "name": "sendNotification",
+                                                                        "parameters": {
+                                                                          "entity": {
+                                                                            "key": "eachItem"
+                                                                          },
+                                                                          "target": {
+                                                                            "key": "combatTarget"
+                                                                          },
+                                                                          "type": {
+                                                                            "value": "setCombatTarget"
+                                                                          }
+                                                                        }
                                                                       }
-                                                                    }
+                                                                    ]
                                                                   }
                                                                 }
                                                               ]
@@ -12909,7 +14042,7 @@
                                                 0,
                                                 -2
                                               ],
-                                              "monsterType": "batong",
+                                              "monsterType": "punchy",
                                               "spawnTeam": "enemy",
                                               "monsterPara": {},
                                               "foundTargetActions": [],
@@ -12979,7 +14112,7 @@
                                               ],
                                               "embedFireParticleBurst": ""
                                             },
-                                            "monsterType": "batong"
+                                            "monsterType": "punchy"
                                           },
                                           "spawnTeam": "enemy",
                                           "periodicActions": [],
@@ -13092,20 +14225,38 @@
                                                               }
                                                             },
                                                             "child": {
-                                                              "title": "sendCombatTargetNotification",
-                                                              "type": "action",
-                                                              "name": "sendNotification",
-                                                              "parameters": {
-                                                                "entity": {
-                                                                  "key": "eachItem"
+                                                              "title": "sendCombatTargetNotificationGuarded",
+                                                              "type": "composite",
+                                                              "name": "sequence",
+                                                              "parameters": {},
+                                                              "children": [
+                                                                {
+                                                                  "title": "companionExists",
+                                                                  "type": "action",
+                                                                  "name": "entityExists",
+                                                                  "parameters": {
+                                                                    "entity": {
+                                                                      "key": "eachItem"
+                                                                    }
+                                                                  }
                                                                 },
-                                                                "target": {
-                                                                  "key": "combatTarget"
-                                                                },
-                                                                "type": {
-                                                                  "value": "setCombatTarget"
+                                                                {
+                                                                  "title": "sendCombatTargetNotification",
+                                                                  "type": "action",
+                                                                  "name": "sendNotification",
+                                                                  "parameters": {
+                                                                    "entity": {
+                                                                      "key": "eachItem"
+                                                                    },
+                                                                    "target": {
+                                                                      "key": "combatTarget"
+                                                                    },
+                                                                    "type": {
+                                                                      "value": "setCombatTarget"
+                                                                    }
+                                                                  }
                                                                 }
-                                                              }
+                                                              ]
                                                             }
                                                           }
                                                         ]
@@ -15023,7 +16174,7 @@
                                           0,
                                           -2
                                         ],
-                                        "monsterType": "batong",
+                                        "monsterType": "punchy",
                                         "spawnTeam": "enemy",
                                         "monsterPara": {},
                                         "foundTargetActions": [],
@@ -15093,7 +16244,7 @@
                                         ],
                                         "embedFireParticleBurst": ""
                                       },
-                                      "monsterType": "batong"
+                                      "monsterType": "punchy"
                                     },
                                     "spawnTeam": "enemy",
                                     "periodicActions": [],
@@ -15206,20 +16357,38 @@
                                                         }
                                                       },
                                                       "child": {
-                                                        "title": "sendCombatTargetNotification",
-                                                        "type": "action",
-                                                        "name": "sendNotification",
-                                                        "parameters": {
-                                                          "entity": {
-                                                            "key": "eachItem"
+                                                        "title": "sendCombatTargetNotificationGuarded",
+                                                        "type": "composite",
+                                                        "name": "sequence",
+                                                        "parameters": {},
+                                                        "children": [
+                                                          {
+                                                            "title": "companionExists",
+                                                            "type": "action",
+                                                            "name": "entityExists",
+                                                            "parameters": {
+                                                              "entity": {
+                                                                "key": "eachItem"
+                                                              }
+                                                            }
                                                           },
-                                                          "target": {
-                                                            "key": "combatTarget"
-                                                          },
-                                                          "type": {
-                                                            "value": "setCombatTarget"
+                                                          {
+                                                            "title": "sendCombatTargetNotification",
+                                                            "type": "action",
+                                                            "name": "sendNotification",
+                                                            "parameters": {
+                                                              "entity": {
+                                                                "key": "eachItem"
+                                                              },
+                                                              "target": {
+                                                                "key": "combatTarget"
+                                                              },
+                                                              "type": {
+                                                                "value": "setCombatTarget"
+                                                              }
+                                                            }
                                                           }
-                                                        }
+                                                        ]
                                                       }
                                                     }
                                                   ]
@@ -17137,7 +18306,7 @@
                                     0,
                                     -2
                                   ],
-                                  "monsterType": "batong",
+                                  "monsterType": "punchy",
                                   "spawnTeam": "enemy",
                                   "monsterPara": {},
                                   "foundTargetActions": [],
@@ -17207,7 +18376,7 @@
                                   ],
                                   "embedFireParticleBurst": ""
                                 },
-                                "monsterType": "batong"
+                                "monsterType": "punchy"
                               },
                               "spawnTeam": "enemy",
                               "periodicActions": [],
@@ -17320,20 +18489,38 @@
                                                   }
                                                 },
                                                 "child": {
-                                                  "title": "sendCombatTargetNotification",
-                                                  "type": "action",
-                                                  "name": "sendNotification",
-                                                  "parameters": {
-                                                    "entity": {
-                                                      "key": "eachItem"
+                                                  "title": "sendCombatTargetNotificationGuarded",
+                                                  "type": "composite",
+                                                  "name": "sequence",
+                                                  "parameters": {},
+                                                  "children": [
+                                                    {
+                                                      "title": "companionExists",
+                                                      "type": "action",
+                                                      "name": "entityExists",
+                                                      "parameters": {
+                                                        "entity": {
+                                                          "key": "eachItem"
+                                                        }
+                                                      }
                                                     },
-                                                    "target": {
-                                                      "key": "combatTarget"
-                                                    },
-                                                    "type": {
-                                                      "value": "setCombatTarget"
+                                                    {
+                                                      "title": "sendCombatTargetNotification",
+                                                      "type": "action",
+                                                      "name": "sendNotification",
+                                                      "parameters": {
+                                                        "entity": {
+                                                          "key": "eachItem"
+                                                        },
+                                                        "target": {
+                                                          "key": "combatTarget"
+                                                        },
+                                                        "type": {
+                                                          "value": "setCombatTarget"
+                                                        }
+                                                      }
                                                     }
-                                                  }
+                                                  ]
                                                 }
                                               }
                                             ]
@@ -19251,7 +20438,7 @@
                               0,
                               -2
                             ],
-                            "monsterType": "batong",
+                            "monsterType": "punchy",
                             "spawnTeam": "enemy",
                             "monsterPara": {},
                             "foundTargetActions": [],
@@ -19321,7 +20508,7 @@
                             ],
                             "embedFireParticleBurst": ""
                           },
-                          "monsterType": "batong"
+                          "monsterType": "punchy"
                         },
                         "spawnTeam": "enemy",
                         "periodicActions": [],
@@ -19434,20 +20621,38 @@
                                             }
                                           },
                                           "child": {
-                                            "title": "sendCombatTargetNotification",
-                                            "type": "action",
-                                            "name": "sendNotification",
-                                            "parameters": {
-                                              "entity": {
-                                                "key": "eachItem"
+                                            "title": "sendCombatTargetNotificationGuarded",
+                                            "type": "composite",
+                                            "name": "sequence",
+                                            "parameters": {},
+                                            "children": [
+                                              {
+                                                "title": "companionExists",
+                                                "type": "action",
+                                                "name": "entityExists",
+                                                "parameters": {
+                                                  "entity": {
+                                                    "key": "eachItem"
+                                                  }
+                                                }
                                               },
-                                              "target": {
-                                                "key": "combatTarget"
-                                              },
-                                              "type": {
-                                                "value": "setCombatTarget"
+                                              {
+                                                "title": "sendCombatTargetNotification",
+                                                "type": "action",
+                                                "name": "sendNotification",
+                                                "parameters": {
+                                                  "entity": {
+                                                    "key": "eachItem"
+                                                  },
+                                                  "target": {
+                                                    "key": "combatTarget"
+                                                  },
+                                                  "type": {
+                                                    "value": "setCombatTarget"
+                                                  }
+                                                }
                                               }
-                                            }
+                                            ]
                                           }
                                         }
                                       ]
@@ -21365,7 +22570,7 @@
                         0,
                         -2
                       ],
-                      "monsterType": "batong",
+                      "monsterType": "punchy",
                       "spawnTeam": "enemy",
                       "monsterPara": {},
                       "foundTargetActions": [],
@@ -21435,7 +22640,7 @@
                       ],
                       "embedFireParticleBurst": ""
                     },
-                    "monsterType": "batong"
+                    "monsterType": "punchy"
                   },
                   "spawnTeam": "enemy",
                   "periodicActions": [],
@@ -21548,20 +22753,38 @@
                                       }
                                     },
                                     "child": {
-                                      "title": "sendCombatTargetNotification",
-                                      "type": "action",
-                                      "name": "sendNotification",
-                                      "parameters": {
-                                        "entity": {
-                                          "key": "eachItem"
+                                      "title": "sendCombatTargetNotificationGuarded",
+                                      "type": "composite",
+                                      "name": "sequence",
+                                      "parameters": {},
+                                      "children": [
+                                        {
+                                          "title": "companionExists",
+                                          "type": "action",
+                                          "name": "entityExists",
+                                          "parameters": {
+                                            "entity": {
+                                              "key": "eachItem"
+                                            }
+                                          }
                                         },
-                                        "target": {
-                                          "key": "combatTarget"
-                                        },
-                                        "type": {
-                                          "value": "setCombatTarget"
+                                        {
+                                          "title": "sendCombatTargetNotification",
+                                          "type": "action",
+                                          "name": "sendNotification",
+                                          "parameters": {
+                                            "entity": {
+                                              "key": "eachItem"
+                                            },
+                                            "target": {
+                                              "key": "combatTarget"
+                                            },
+                                            "type": {
+                                              "value": "setCombatTarget"
+                                            }
+                                          }
                                         }
-                                      }
+                                      ]
                                     }
                                   }
                                 ]
@@ -23479,7 +24702,7 @@
                   0,
                   -2
                 ],
-                "monsterType": "batong",
+                "monsterType": "punchy",
                 "spawnTeam": "enemy",
                 "monsterPara": {},
                 "foundTargetActions": [],
@@ -23549,7 +24772,7 @@
                 ],
                 "embedFireParticleBurst": ""
               },
-              "monsterType": "batong"
+              "monsterType": "punchy"
             },
             "spawnTeam": "enemy",
             "periodicActions": [],
@@ -23662,20 +24885,38 @@
                                 }
                               },
                               "child": {
-                                "title": "sendCombatTargetNotification",
-                                "type": "action",
-                                "name": "sendNotification",
-                                "parameters": {
-                                  "entity": {
-                                    "key": "eachItem"
+                                "title": "sendCombatTargetNotificationGuarded",
+                                "type": "composite",
+                                "name": "sequence",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "companionExists",
+                                    "type": "action",
+                                    "name": "entityExists",
+                                    "parameters": {
+                                      "entity": {
+                                        "key": "eachItem"
+                                      }
+                                    }
                                   },
-                                  "target": {
-                                    "key": "combatTarget"
-                                  },
-                                  "type": {
-                                    "value": "setCombatTarget"
+                                  {
+                                    "title": "sendCombatTargetNotification",
+                                    "type": "action",
+                                    "name": "sendNotification",
+                                    "parameters": {
+                                      "entity": {
+                                        "key": "eachItem"
+                                      },
+                                      "target": {
+                                        "key": "combatTarget"
+                                      },
+                                      "type": {
+                                        "value": "setCombatTarget"
+                                      }
+                                    }
                                   }
-                                }
+                                ]
                               }
                             }
                           ]
@@ -25593,7 +26834,7 @@
             0,
             -2
           ],
-          "monsterType": "batong",
+          "monsterType": "punchy",
           "spawnTeam": "enemy",
           "monsterPara": {},
           "foundTargetActions": [],
@@ -25663,7 +26904,7 @@
           ],
           "embedFireParticleBurst": ""
         },
-        "monsterType": "batong"
+        "monsterType": "punchy"
       },
       "spawnTeam": "enemy",
       "periodicActions": [],
@@ -25825,20 +27066,38 @@
                           }
                         },
                         "child": {
-                          "title": "sendHeadCombatTargetNotification",
-                          "type": "action",
-                          "name": "sendNotification",
-                          "parameters": {
-                            "entity": {
-                              "key": "eachItem"
+                          "title": "sendHeadCombatTargetNotificationGuarded",
+                          "type": "composite",
+                          "name": "sequence",
+                          "parameters": {},
+                          "children": [
+                            {
+                              "title": "companionExists",
+                              "type": "action",
+                              "name": "entityExists",
+                              "parameters": {
+                                "entity": {
+                                  "key": "eachItem"
+                                }
+                              }
                             },
-                            "target": {
-                              "key": "target"
-                            },
-                            "type": {
-                              "value": "setCombatTarget"
+                            {
+                              "title": "sendHeadCombatTargetNotification",
+                              "type": "action",
+                              "name": "sendNotification",
+                              "parameters": {
+                                "entity": {
+                                  "key": "eachItem"
+                                },
+                                "target": {
+                                  "key": "target"
+                                },
+                                "type": {
+                                  "value": "setCombatTarget"
+                                }
+                              }
                             }
-                          }
+                          ]
                         }
                       }
                     ]
@@ -29850,7 +31109,7 @@
       0,
       -2
     ],
-    "monsterType": "batong",
+    "monsterType": "punchy",
     "spawnTeam": "enemy",
     "monsterPara": {},
     "foundTargetActions": [],
@@ -30032,5 +31291,5 @@
     ],
     "embedFireParticleBurst": ""
   },
-  "monsterType": "batong"
+  "monsterType": "punchy"
 }'
